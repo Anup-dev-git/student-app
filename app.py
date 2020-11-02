@@ -6,7 +6,8 @@ port=5000
 
 con = sqlite3.connect("student.db")  
 con.execute("create table if not exists student (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, enroll TEXT UNIQUE NOT NULL, branch TEXT NOT NULL)")   
- 
+
+
 @app.route("/")  
 def index():  
     return render_template("index.html"); 
@@ -55,9 +56,9 @@ def deleterecord():
         try:  
             cur = con.cursor()  
             cur.execute("delete from student where id = ?",id)  
-            msg = "student record successfully removed" 
+            msg = "Student record successfully removed" 
         except:  
-            msg = "record not deleted" 
+            msg = "Record not deleted" 
         finally:  
             return render_template("delete_record.html",msg = msg)
     
