@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  app:
+
+    # Use latest Python Docker image
+    image: "python:latest"
+
+    # Set container name
+    container_name: student-app
+
+    # Set environment variables
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=/repo/app.py
+      - DATABASE=/repo/student.db
+
+    # Mount entire project into docker container under /repo
+    volumes:
+      - ./:/repo
+
+    # Make all ports accessible on host
+    network_mode: host
+
+    # Install requirements and start flask app
+    entrypoint: >
+      bash -c "pip install -r /repo/requirements.txt
+      && flask run"
