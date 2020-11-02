@@ -29,15 +29,11 @@ I have added docker-compose.yml so that if anyone wants to add more services to 
 At this point of time jenkins will be able to fetch files from github, build docker containers and run your application on them. But it won't show the build as complete and a new build won't start if you push changes to your git repository for that you have to create a webhook in your git repository.
 
 ## Git Webhook for jenkins:
-
-1. Go to your Repository Settings>>Webhooks>>Add Webhook.
-
-It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
-
-2.To install ngrok , open https://ngrok.com/download and follow the instructions
-3.RUN ON TERMINAL => ifconfig (to get you machine IP).
-4.RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080
-5.You will get a url like this : http://9506c53b8hcf.ngrok.io. 
+1. Go to your Repository Settings>>Webhooks>>Add Webhook.It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
+2. To install ngrok , go to https://ngrok.com/download.
+3. RUN ON TERMINAL => ifconfig (to get you machine IP).
+4. RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080
+5. You will get a url like this : http://9506c53b8hcf.ngrok.io. 
 6. Copy the ngrokurl/github-webhook/ on [Payload URL].
 7. Set [content type] to application/json.
 8. Select 'just push operation'.
