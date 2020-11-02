@@ -29,12 +29,12 @@ I have added docker-compose.yml so that if anyone wants to add more services to 
 ## Git Webhook for jenkins:
 1. Go to your Repository Settings>>Webhooks>>Add Webhook.
 
-  1.1. It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. 
-  1.2. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
-  1.3. To install ngrok , open https://ngrok.com/download and follow the instructions.
-  1.4.  RUN ON TERMINAL => ifconfig (to get you machine IP)
-  1.5.  RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080
-  1.6.  You will get a url like this : http://9506c53b8hcf.ngrok.io.
+1.1. It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. 
+1.2. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
+1.3. To install ngrok , open https://ngrok.com/download and follow the instructions.
+1.4.  RUN ON TERMINAL => ifconfig (to get you machine IP)
+1.5.  RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080
+1.6.  You will get a url like this : http://9506c53b8hcf.ngrok.io.
   
 2. Copy the ngrokurl/github-webhook/ on [Payload URL].
 3. Set [content type] to application/json.
