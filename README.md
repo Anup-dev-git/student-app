@@ -20,8 +20,8 @@ I have added docker-compose.yml so that if anyone wants to add more services to 
 5. In [Build Triggers] select 'GitHub hook trigger for GITScm polling'. 
 6. In [Build] select 'execute shell', a shell will open.
 7. In shell enter the following command:
-      docker build --pull -t student-app .
-      docker run -p 5000:5000 student-app
+            docker build --pull -t student-app .
+            docker run -p 5000:5000 student-app
 8. Save, Apply and click on Build now.
 
 >> At this point of time jenkins will be able to fetch files from github, build docker containers and run your application on them. But it won't show the build as complete and a new build won't start if you push changes to your git repository for that you have to create a webhook in your git repository.
