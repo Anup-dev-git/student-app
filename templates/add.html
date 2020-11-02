@@ -2,9 +2,56 @@
 <html>  
 <head>  
     <title>Add Student</title>  
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+        .main {
+            background-color: lightblue;
+            border-radius: 5px;
+            width: 80%;
+            border: 15px solid white;
+            padding: 30px;
+            margin: auto;
+        }
+    
+        .title {
+            background-color: lightblue;
+            text-align: center;
+            border-radius: 5px;
+            width: 80%;
+            border: 15px solid white;
+            padding: 30px;
+            margin: auto;
+        }
+    
+        .article {
+            background-color: lightgrey;
+            width: 70%;
+            border: 5px solid #ff9a8d;
+            padding: 30px;
+            margin: 10px;
+        }
+    </style>
 </head>  
-<body>  
+<body bgcolor="#1e3d59">  
+    <div class='main'>
     <h2>Student Information</h2>   
+    </div>
+    <div class='article'>
+        <div class='main'>
     <form action = "/savedetails" method="post">  
     <table>  
         <tr><td>Name</td><td><input type="text" name="name"></td></tr>  
@@ -12,6 +59,7 @@
         <tr><td>Branch</td><td><input type="text" name="branch"></td></tr>  
         <tr><td><input type="submit" value="Submit"></td></tr>  
     </table>  
-    </form>  
+    </form> 
+   </div></div> 
 </body>  
 </html> 

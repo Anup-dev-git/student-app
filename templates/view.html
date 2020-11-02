@@ -2,11 +2,57 @@
 <html>  
 <head>  
     <title>List</title>  
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            }
+
+            td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: #dddddd;
+            }
+        .main {
+            background-color: lightblue;
+            border-radius: 5px;
+            width: 80%;
+            border: 15px solid white;
+            padding: 30px;
+            margin: auto;
+        }
+    
+        .title {
+            background-color: lightblue;
+            text-align: center;
+            border-radius: 5px;
+            width: 80%;
+            border: 15px solid white;
+            padding: 30px;
+            margin: auto;
+        }
+    
+        .article {
+            background-color: lightgrey;
+            width: 70%;
+            border: 5px solid #ff9a8d;
+            padding: 30px;
+            margin: 10px;
+        }
+    </style>
 </head>  
-<body>  
-   
-<h3>Student Information</h3>  
-<table border=5>  
+<body bgcolor="#1e3d59">  
+    <div class='main'>
+      <h2>Student Information</h2> 
+    </div>
+    <div class='main'>
+    <div class='article'>
+<table border=3>  
     <thead>  
         <td>ID</td>  
         <td>Name</td>  
@@ -25,9 +71,10 @@
        
     {% endfor %}  
 </table>  
-<br><br>  
+</div>
+<br><br> <br><br>
    
-<a href="/">Go back to home page</a>  
-   
+<a href="/">Go back to Home Page</a>  
+</div>  
 </body>  
 </html>  
