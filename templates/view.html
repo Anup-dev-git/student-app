@@ -5,18 +5,20 @@
     <style>
         table {
             font-family: arial, sans-serif;
-            border-collapse: collapse;
+            border-color:black;
+            border-radius: 5px;
+            border-width: 10px;
             width: 100%;
             }
 
             td, th {
-            border: 1px solid #dddddd;
+            border: 1px solid lightblue;
             text-align: left;
             padding: 8px;
             }
 
             tr:nth-child(even) {
-            background-color: #dddddd;
+            background-color: lightblue;
             }
         .main {
             background-color: lightblue;
@@ -50,19 +52,20 @@
     <div class='main'>
       <h2>Student Information</h2> 
     </div>
+    <br><br><br>
     <div class='main'>
     <div class='article'>
-<table border=3>  
-    <thead>  
+   <table>  
+    <th>  
         <td>ID</td>  
         <td>Name</td>  
         <td>Enrollment Number</td>  
         <td>Branch</td>  
-    </thead>  
-       
+    </th>  
     {% for row in rows %}  
        
-        <tr>  
+        <tr> 
+            <td></td> 
             <td>{{row["id"]}}</td>  
             <td>{{row["name"]}}</td>  
             <td>{{row["enroll"]}}</td>  
@@ -74,7 +77,7 @@
 </div>
 <br><br> <br><br>
    
-<a href="/">Go back to Home Page</a>  
+<b><a href="/">Go back to Home Page</a></b>
 </div>  
 </body>  
 </html>  

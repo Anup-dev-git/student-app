@@ -3,6 +3,41 @@
 <head>  
     <title>Delete Record</title>  
     <style>
+        table {
+            font-family: arial, sans-serif;
+            border-color:black;
+            border-radius: 5px;
+            border-width: 10px;
+            width: 100%;
+            }
+
+            td, th {
+            border: 1px solid lightblue;
+            text-align: left;
+            padding: 8px;
+            }
+
+            tr:nth-child(even) {
+            background-color: lightblue;
+            }
+        .main {
+            background-color: lightblue;
+            border-radius: 5px;
+            width: 80%;
+            border: 15px solid white;
+            padding: 30px;
+            margin: auto;
+        }
+    
+        .title {
+            background-color: lightblue;
+            text-align: center;
+            border-radius: 5px;
+            width: 80%;
+            border: 15px solid white;
+            padding: 30px;
+            margin: auto;
+        }
         .main {
             background-color: lightblue;
             border-radius: 5px;
@@ -33,13 +68,17 @@
 </head>  
 <body bgcolor="#1e3d59">  
     <div class='main'>
-        <h3>Remove Student from the list</h3>  
+        <h3>Remove Student from the record</h3>  
     </div>
     <div class='main'>
         <div class='article'>
+            <table>  
+                <th>  
         <form action="/deleterecord" method="post">  
         Student Id : <input type="text" name="id">  
         <input type="submit" value="Submit">  
+        </th>
+        </table>
     </div>
 </div>
 </form>  

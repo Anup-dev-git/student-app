@@ -1,22 +1,24 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-    <title>Add Student</title>  
+    <title>Register Student</title>  
     <style>
         table {
             font-family: arial, sans-serif;
-            border-collapse: collapse;
+            border-color:black;
+            border-radius: 5px;
+            border-width: 10px;
             width: 100%;
             }
 
             td, th {
-            border: 1px solid #dddddd;
+            border: 1px solid lightblue;
             text-align: left;
             padding: 8px;
             }
 
-            tr:nth-child(even) {
-            background-color: #dddddd;
+            tr {
+            background-color: lightblue;
             }
         .main {
             background-color: lightblue;
@@ -50,14 +52,15 @@
     <div class='main'>
     <h2>Student Information</h2>   
     </div>
-    <div class='article'>
-        <div class='main'>
+    <br><br><br>
+    <div class='main'>
+        <div class='article'>
     <form action = "/savedetails" method="post">  
     <table>  
         <tr><td>Name</td><td><input type="text" name="name"></td></tr>  
         <tr><td>Enrollment No.</td><td><input type="text" name="enroll"></td></tr>  
         <tr><td>Branch</td><td><input type="text" name="branch"></td></tr>  
-        <tr><td><input type="submit" value="Submit"></td></tr>  
+        <tr><td><input type="submit" value="Submit"></td><td></td><tr>
     </table>  
     </form> 
    </div></div> 
