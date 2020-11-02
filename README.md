@@ -20,21 +20,23 @@ I have added docker-compose.yml so that if anyone wants to add more services to 
 5. In [Build Triggers] select 'GitHub hook trigger for GITScm polling'. 
 6. In [Build] select 'execute shell', a shell will open.
 7. In shell enter the following command:
-            docker build --pull -t student-app .
-            docker run -p 5000:5000 student-app
+
+                        docker build --pull -t student-app .
+                        docker run -p 5000:5000 student-app
+                        
 8. Save, Apply and click on Build now.
 
->> At this point of time jenkins will be able to fetch files from github, build docker containers and run your application on them. But it won't show the build as complete and a new build won't start if you push changes to your git repository for that you have to create a webhook in your git repository.
+### At this point of time jenkins will be able to fetch files from github, build docker containers and run your application on them. But it won't show the build as complete and a new build won't start if you push changes to your git repository for that you have to create a webhook in your git repository.
 
 ## Git Webhook for jenkins:
 
 1. Go to your Repository Settings>>Webhooks>>Add Webhook.
 
->>It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
+### It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
 
 2.To install ngrok , open https://ngrok.com/download and follow the instructions.
-3.RUN ON TERMINAL => ifconfig (to get you machine IP)
-4.RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080.
+3.RUN ON TERMINAL => ifconfig (to get you machine IP).
+4.RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080
 5.You will get a url like this : http://9506c53b8hcf.ngrok.io. 
 6. Copy the ngrokurl/github-webhook/ on [Payload URL].
 7. Set [content type] to application/json.
