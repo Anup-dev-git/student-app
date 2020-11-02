@@ -27,29 +27,29 @@ I have added docker-compose.yml so that if anyone wants to add more services to 
 >> At this point of time jenkins will be able to fetch files from github, build docker containers and run your application on them. But it won't show the build as complete and a new build won't start if you push changes to your git repository for that you have to create a webhook in your git repository.
 
 ## Git Webhook for jenkins:
+
 1. Go to your Repository Settings>>Webhooks>>Add Webhook.
 
-1.1. It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. 
-1.2. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
-1.3. To install ngrok , open https://ngrok.com/download and follow the instructions.
-1.4.  RUN ON TERMINAL => ifconfig (to get you machine IP)
-1.5.  RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080
-1.6.  You will get a url like this : http://9506c53b8hcf.ngrok.io.
-  
-2. Copy the ngrokurl/github-webhook/ on [Payload URL].
-3. Set [content type] to application/json.
-4. Select 'just push operation'.
-5. Check Active and click on create webhook.
+>>It is not possible to add a webhook for the Jenkins running on local host as it doesn’t have a public URL exposed over internet. To resolve this issue we can use a tool like ngrok which will expose the local server to the public internet.
 
->> Now you need to configure you jenkens CI/CD pipeline as with every build you need to remove images with same name from previous build. You can do it by updating the build execute shell with the following commands :
+2.To install ngrok , open https://ngrok.com/download and follow the instructions.
+3.RUN ON TERMINAL => ifconfig (to get you machine IP)
+4.RUN ON TERMINAL => ./ngrok http://(your-machine-ip):8080.
+5.You will get a url like this : http://9506c53b8hcf.ngrok.io. 
+6. Copy the ngrokurl/github-webhook/ on [Payload URL].
+7. Set [content type] to application/json.
+8. Select 'just push operation'.
+9. Check Active and click on create webhook.
 
-docker build --pull -t student-app .
-docker run -p 5000:5000 student-app
-docker stop $(docker ps -aq)
-docker rm $(docker ps -aq)
-docker image rm -f student-app
+## Now you need to configure you jenkens CI/CD pipeline as with every build you need to remove images with same name from previous build. You can do it by updating the build execute shell with the following commands :
 
->> Save, now with every commit to your git repository jenkins will build a new image of your web application.
+      docker build --pull -t student-app .
+      docker run -p 5000:5000 student-app
+      docker stop $(docker ps -aq)
+      docker rm $(docker ps -aq)
+      docker image rm -f student-app
+
+## Save, now with every commit to your git repository jenkins will build a new image of your web application.
 
 
 
