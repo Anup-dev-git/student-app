@@ -5,7 +5,7 @@ app = Flask(__name__)
 port=5000 
 
 con = sqlite3.connect("student.db")  
-con.execute("create table if not exists student (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, enroll TEXT UNIQUE NOT NULL, branch TEXT NOT NULL)")   
+con.execute("create table if not exists student (id INTEGER AUTOINCREMENT, name TEXT NOT NULL, enroll TEXT UNIQUE PRIMARY KEY NOT NULL, branch TEXT NOT NULL)")   
 
 
 @app.route("/")  
@@ -51,11 +51,11 @@ def delete():
  
 @app.route("/deleterecord",methods = ["POST"])  
 def deleterecord():  
-    id = request.form["id"]  
+    id = request.form["enroll"]  
     with sqlite3.connect("student.db") as con:  
         try:  
             cur = con.cursor()  
-            cur.execute("delete from student where id = ?",id)  
+            cur.execute("delete from student where enroll = ?",id)  
             msg = "Student record successfully removed" 
         except:  
             msg = "Record not deleted" 
