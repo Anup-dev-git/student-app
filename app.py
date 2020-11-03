@@ -62,7 +62,15 @@ def deleterecord():
         finally:  
             return render_template("delete_record.html",msg = msg)
 
-  
+@app.route("/shutdown", methods=['POST'])
+def shutdown():
+    shutdown_func = request.environ.get('werkzeug.server.shutdown')
+    if shutdown_func is None:
+        raise RuntimeError('Not running werkzeug')
+    shutdown_func()
+    return "Shutting down..."
+    
+      
 if __name__ == '__main__':
    app.run(host="0.0.0.0",port=port)
 
